@@ -30,6 +30,7 @@
         <a href="#projects" class="hover:text-white transition" data-i18n="nav.projects">Проекты</a>
         <a href="#services" class="hover:text-white transition" data-i18n="nav.services">Услуги</a>
         <a href="#education" class="hover:text-white transition" data-i18n="nav.education">Образование</a>
+        <a href="#recommendations" class="hover:text-white transition" data-i18n="nav.rec">Рекомендации</a>
         <a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Контакты</a>
       </div>
       <div class="flex items-center gap-2">
@@ -75,7 +76,7 @@
   <section id="about" class="py-24 px-6">
     <div class="max-w-5xl mx-auto reveal">
       <h2 class="text-sm font-mono text-accent mb-3" data-i18n="about.tag">// обо мне</h2>
-      <p class="text-2xl sm:text-3xl font-light leading-relaxed text-gray-200" data-i18n="about.text">Fullstack-инженер с фокусом на <span class="text-white font-medium">результат продукта</span>. Последние 6 лет — в швейцарской продуктовой компании <span class="text-white font-medium">HS Soft AG</span> (ERP для ритейла): разрабатывал и поддерживал B2B-сервисы, разрабатывал микросервисы, деплоил через CircleCI, оптимизировал billing. Люблю задачи на стыке <span class="text-white font-medium">frontend, backend и AI</span> — и довожу их от идеи до работающего продукта.</p>
+      <p class="text-2xl sm:text-3xl font-light leading-relaxed text-gray-200" data-i18n="about.text">Fullstack-инженер с фокусом на <span class="text-white font-medium">результат продукта</span>. Последние 6 лет — в швейцарской продуктовой компании <span class="text-white font-medium">HS Soft AG</span> (Android POS и системы для пекарен и кондитерских, 550+ клиентов): разрабатывал и поддерживал B2B-сервисы, разрабатывал микросервисы, деплоил через CircleCI, оптимизировал billing. Люблю задачи на стыке <span class="text-white font-medium">frontend, backend и AI</span> — и довожу их от идеи до работающего продукта.</p>
     </div>
   </section>
 
@@ -123,7 +124,7 @@
             <span class="font-mono text-sm text-cyan-300">2020 — 2026</span>
           </div>
           <div class="text-accent font-medium mb-3" data-i18n="exp.company1">HS Soft AG · Швейцария</div>
-          <p class="text-gray-400 leading-relaxed" data-i18n="exp.desc1">ERP-платформа для ритейла и хлебопечения. Разрабатывал и поддерживал B2B-сервисы и микросервисы, деплоил через CircleCI, оптимизировал billing. Строил интеграции облачных сервисов и платёжных систем с ERP, внедрял AI-инструменты в разработку. Стек: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.</p>
+          <p class="text-gray-400 leading-relaxed" data-i18n="exp.desc1">Лидер Android POS-решений для пекарен, кондитерских и мясной индустрии (550+ компаний): кассовые системы, складской учёт, управление рецептурами, печать этикеток. Разрабатывал и поддерживал B2B-сервисы и микросервисы, деплоил через CircleCI, оптимизировал billing. Строил интеграции облачных сервисов и платёжных систем, внедрял AI-инструменты в разработку. Стек: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.</p>
         </div>
         <div class="reveal glass rounded-2xl p-7 card-hover">
           <div class="flex flex-wrap justify-between gap-2 mb-2">
@@ -240,6 +241,23 @@
     </div>
   </section>
 
+  <section id="recommendations" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="rec.tag">// рекомендации</h2>
+      <h3 class="text-3xl font-bold mb-3 reveal" data-i18n="rec.title">Рекомендательные письма</h3>
+      <p class="text-gray-400 mb-10 reveal" data-i18n="rec.sub">Отзывы коллег о совместной работе (LinkedIn).</p>
+      <div class="relative reveal max-w-lg mx-auto">
+        <div id="rec-viewport" class="overflow-hidden rounded-2xl">
+          <div id="rec-track" class="flex transition-transform duration-500 ease-out"></div>
+        </div>
+        <button id="rec-prev" aria-label="Назад" class="hidden absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass hover:border-white/40 transition items-center justify-center text-xl">‹</button>
+        <button id="rec-next" aria-label="Вперёд" class="hidden absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass hover:border-white/40 transition items-center justify-center text-xl">›</button>
+        <div id="rec-dots" class="flex justify-center gap-2 mt-5"></div>
+      </div>
+      <a href="https://www.linkedin.com/in/nikita-lukashev-43a38b291/details/recommendations/" target="_blank" class="reveal inline-block mt-6 text-sm text-accent hover:text-violet-400 transition" data-i18n="rec.more">Все рекомендации на LinkedIn ↗</a>
+    </div>
+  </section>
+
   <section id="contact" class="py-24 px-6">
     <div class="max-w-3xl mx-auto text-center reveal">
       <h2 class="text-sm font-mono text-accent mb-3" data-i18n="contact.tag">// контакты</h2>
@@ -276,7 +294,8 @@
     // i18n
     const I18N = {
       en: {
-        'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.services':'Services','nav.education':'Education','nav.contact':'Contact','nav.cta':'Get in touch',
+        'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.services':'Services','nav.education':'Education','nav.rec':'Recommendations','nav.contact':'Contact','nav.cta':'Get in touch',
+        'rec.tag':'// recommendations','rec.title':'Recommendations','rec.sub':"Colleagues' feedback about working together (LinkedIn).",'rec.more':'All recommendations on LinkedIn ↗',
         'svc.tag':'// services','svc.title':'Freelance services','svc.sub':'Available for project work as a contractor (B2B) — from MVP to product improvements. Hourly or fixed price per project.',
         'svc.c1t':'Turnkey Fullstack','svc.c1d':'MVPs and products from scratch: frontend, backend, database and deployment. From idea to a working app.',
         'svc.c2t':'SSR / Next.js','svc.c2d':'SPA-to-SSR migration, performance and Core Web Vitals optimization, SEO for React/Next.js apps.',
@@ -286,10 +305,10 @@
         'hero.badge':'Open to offers · Remote / B2B','hero.name':'Nikita<br><span class="gradtext">Lukashev</span>','hero.title':'Senior Fullstack Developer',
         'hero.desc':'8+ years building web products from idea to production: complex interfaces, reliable backend, integrations and AI solutions.',
         'hero.btnProjects':'View projects','hero.btnResume':'⬇ Download CV','hero.stat1':'years of experience','hero.stat2':'frontend + backend + AI','hero.stat3':'English',
-        'about.tag':'// about','about.text':'Fullstack engineer focused on <span class="text-white font-medium">product outcomes</span>. Last 6 years at Swiss product company <span class="text-white font-medium">HS Soft AG</span> (retail ERP): built and maintained B2B services, developed microservices, deployed via CircleCI, optimized billing. I love work at the intersection of <span class="text-white font-medium">frontend, backend and AI</span> — and take it from idea to a working product.',
+        'about.tag':'// about','about.text':'Fullstack engineer focused on <span class="text-white font-medium">product outcomes</span>. Last 6 years at Swiss product company <span class="text-white font-medium">HS Soft AG</span> (Android POS and software for bakeries and confectioneries, 550+ clients): built and maintained B2B services, developed microservices, deployed via CircleCI, optimized billing. I love work at the intersection of <span class="text-white font-medium">frontend, backend and AI</span> — and take it from idea to a working product.',
         'skills.tag':'// stack','skills.title':'Technologies','skills.data':'Data · Infra','skills.ai':'AI · Payments',
         'exp.tag':'// career','exp.title':'Experience',
-        'exp.role1':'Senior Fullstack Developer','exp.company1':'HS Soft AG · Switzerland','exp.desc1':'ERP platform for retail and bakeries. Built and maintained B2B services and microservices, deployed via CircleCI, optimized billing. Built cloud and payment integrations with the ERP, introduced AI tooling into development. Stack: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.',
+        'exp.role1':'Senior Fullstack Developer','exp.company1':'HS Soft AG · Switzerland','exp.desc1':'Leading Android POS solutions for bakeries, confectioneries and butcheries (550+ companies): POS/cash systems, inventory, recipe management, label printing. Built and maintained B2B services and microservices, deployed via CircleCI, optimized billing. Built cloud and payment integrations, introduced AI tooling into development. Stack: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.',
         'exp.role2':'Node.js / React Developer','exp.company2':'Remote Assembly · Estonia','exp.desc2':'Built SPAs in React and serverless functions (Google Cloud Functions) in Node.js. Scrum workflow.',
         'exp.role3':'Fullstack Developer','exp.company3':'Freelance','exp.desc3':'SPAs (React/Angular), Node.js backend, integrations with external services and payment gateways (Stripe), containerization and deployment.',
         'proj.tag':'// work','proj.title':'Projects',
@@ -325,6 +344,39 @@
     }
     setLang(localStorage.getItem('lang') || 'ru');
     lbtn.addEventListener('click', () => setLang(root.lang === 'ru' ? 'en' : 'ru'));
+
+    // recommendations carousel — auto-detects rec-1.png .. rec-8.png
+    (function(){
+      const track = document.getElementById('rec-track');
+      const dotsBox = document.getElementById('rec-dots');
+      const prev = document.getElementById('rec-prev'), next = document.getElementById('rec-next');
+      const LINK = 'https://www.linkedin.com/in/nikita-lukashev-43a38b291/details/recommendations/';
+      const candidates = Array.from({length:8}, (_,i)=>`./rec-${i+1}.png`);
+      let index = 0, count = 0;
+
+      function render(found){
+        count = found.length;
+        if (!count){ track.innerHTML = '<div class="min-w-full p-10 text-center text-gray-400 glass rounded-2xl">Сохраните скриншоты рекомендаций как rec-1.png, rec-2.png … рядом с index.html</div>'; return; }
+        track.innerHTML = found.map(src =>
+          `<div class="min-w-full px-1"><a href="${LINK}" target="_blank" class="block rounded-2xl overflow-hidden border border-white/10 bg-white"><img src="${src}" alt="Рекомендация" class="w-full h-auto block"></a></div>`
+        ).join('');
+        dotsBox.innerHTML = found.map((_,i)=>`<button data-i="${i}" class="w-2.5 h-2.5 rounded-full transition" style="background:${i===0?'#8b5cf6':'rgba(148,163,184,.4)'}"></button>`).join('');
+        if (count > 1){ prev.classList.replace('hidden','flex'); next.classList.replace('hidden','flex'); }
+        update();
+        dotsBox.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{index=+b.dataset.i;update();}));
+      }
+      function update(){
+        track.style.transform = `translateX(-${index*100}%)`;
+        dotsBox.querySelectorAll('button').forEach((b,i)=>b.style.background = i===index ? '#8b5cf6' : 'rgba(148,163,184,.4)');
+      }
+      prev.addEventListener('click',()=>{index=(index-1+count)%count;update();});
+      next.addEventListener('click',()=>{index=(index+1)%count;update();});
+
+      // detect which images exist
+      Promise.all(candidates.map(src => new Promise(res => {
+        const img = new Image(); img.onload = ()=>res(src); img.onerror = ()=>res(null); img.src = src;
+      }))).then(list => render(list.filter(Boolean)));
+    })();
   </script>
 </body>
 </html>
