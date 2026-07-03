@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Никита Лукашев — Senior Fullstack Developer</title>
-  <meta name="description" content="Senior Fullstack Developer / Team Lead. 8+ лет опыта. Angular, React, Node.js, Python, AI. Портфолио." />
+  <meta name="description" content="Senior Fullstack Developer. 8+ лет опыта. Angular, React, Node.js, Python, AI. Портфолио." />
   <meta name="theme-color" content="#0a0a0f" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0f'/%3E%3Ctext x='50' y='70' font-size='54' font-family='Arial,sans-serif' font-weight='bold' fill='%238b5cf6' text-anchor='middle'%3EНЛ%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,56 +14,50 @@
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
-  <!-- animated background -->
   <div class="fixed inset-0 -z-10 overflow-hidden">
     <div class="absolute top-[-10%] left-[-10%] w-[45vw] h-[45vw] bg-violet-600/20 rounded-full blur-3xl animate-blob"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-cyan-500/15 rounded-full blur-3xl animate-blob" style="animation-delay:-6s"></div>
     <div class="absolute top-[40%] left-[50%] w-[30vw] h-[30vw] bg-fuchsia-600/10 rounded-full blur-3xl animate-blob" style="animation-delay:-12s"></div>
   </div>
 
-  <!-- nav -->
   <nav class="fixed top-0 inset-x-0 z-50 glass">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#top" class="font-bold text-lg tracking-tight">НЛ<span class="text-accent">.</span></a>
       <div class="hidden sm:flex gap-8 text-sm text-gray-400">
-        <a href="#about" class="hover:text-white transition">Обо мне</a>
-        <a href="#skills" class="hover:text-white transition">Навыки</a>
-        <a href="#experience" class="hover:text-white transition">Опыт</a>
-        <a href="#projects" class="hover:text-white transition">Проекты</a>
-        <a href="#education" class="hover:text-white transition">Образование</a>
-        <a href="#contact" class="hover:text-white transition">Контакты</a>
+        <a href="#about" class="hover:text-white transition" data-i18n="nav.about">Обо мне</a>
+        <a href="#skills" class="hover:text-white transition" data-i18n="nav.skills">Навыки</a>
+        <a href="#experience" class="hover:text-white transition" data-i18n="nav.experience">Опыт</a>
+        <a href="#projects" class="hover:text-white transition" data-i18n="nav.projects">Проекты</a>
+        <a href="#services" class="hover:text-white transition" data-i18n="nav.services">Услуги</a>
+        <a href="#education" class="hover:text-white transition" data-i18n="nav.education">Образование</a>
+        <a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Контакты</a>
       </div>
-      <div class="flex items-center gap-3">
-        <button id="theme-toggle" aria-label="Сменить тему" class="w-9 h-9 rounded-full glass hover:border-white/30 transition flex items-center justify-center text-lg">🌙</button>
-        <a href="#contact" class="text-sm font-medium px-4 py-2 rounded-full bg-accent hover:bg-violet-500 transition text-white">Связаться</a>
+      <div class="flex items-center gap-2">
+        <button id="lang-toggle" aria-label="Language" class="h-9 px-3 rounded-full glass hover:border-white/30 transition text-sm font-medium">EN</button>
+        <button id="theme-toggle" aria-label="Тема" class="w-9 h-9 rounded-full glass hover:border-white/30 transition flex items-center justify-center text-lg">🌙</button>
+        <a href="#contact" class="hidden sm:inline text-sm font-medium px-4 py-2 rounded-full bg-accent hover:bg-violet-500 transition text-white" data-i18n="nav.cta">Связаться</a>
       </div>
     </div>
   </nav>
 
-  <!-- hero -->
   <header id="top" class="min-h-screen flex items-center pt-24 pb-16 px-6">
     <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-12 items-center w-full">
       <div class="reveal">
         <div class="inline-flex items-center gap-2 text-xs font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-3 py-1 mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Открыт к предложениям · Удалённо / ИП
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> <span data-i18n="hero.badge">Открыт к предложениям · Удалённо / ИП</span>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight mb-4">
-          Никита<br><span class="gradtext">Лукашев</span>
-        </h1>
-        <p class="text-xl sm:text-2xl text-gray-300 font-medium mb-2">Senior Fullstack Developer · Team Lead</p>
-        <p class="text-gray-400 max-w-xl mb-8 leading-relaxed">
-          8+ лет создаю веб-продукты от идеи до продакшена: сложные интерфейсы, надёжный backend,
-          интеграции и AI-решения. Руководил командой из 5 человек.
-        </p>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight mb-4" data-i18n="hero.name">Никита<br><span class="gradtext">Лукашев</span></h1>
+        <p class="text-xl sm:text-2xl text-gray-300 font-medium mb-2" data-i18n="hero.title">Senior Fullstack Developer</p>
+        <p class="text-gray-400 max-w-xl mb-8 leading-relaxed" data-i18n="hero.desc">8+ лет создаю веб-продукты от идеи до продакшена: сложные интерфейсы, надёжный backend, интеграции и AI-решения.</p>
         <div class="flex flex-wrap gap-3">
-          <a href="#projects" class="px-6 py-3 rounded-full bg-accent hover:bg-violet-500 transition font-medium text-white">Смотреть проекты</a>
-          <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium inline-flex items-center gap-2">⬇ Скачать резюме</a>
+          <a href="#projects" class="px-6 py-3 rounded-full bg-accent hover:bg-violet-500 transition font-medium text-white" data-i18n="hero.btnProjects">Смотреть проекты</a>
+          <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium inline-flex items-center gap-2" data-i18n="hero.btnResume">⬇ Скачать резюме</a>
           <a href="https://github.com/Lukashev97" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">GitHub</a>
         </div>
         <div class="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-sm text-gray-400">
-          <div><span class="text-2xl font-bold text-white">8+</span> лет опыта</div>
-          <div><span class="text-2xl font-bold text-white">5</span> человек в команде</div>
-          <div><span class="text-2xl font-bold text-white">C1</span> английский</div>
+          <div><span class="text-2xl font-bold text-white">8+</span> <span data-i18n="hero.stat1">лет опыта</span></div>
+          <div><span class="text-2xl font-bold text-white">Fullstack</span> <span data-i18n="hero.stat2">фронт + бэк + AI</span></div>
+          <div><span class="text-2xl font-bold text-white">C1</span> <span data-i18n="hero.stat3">английский</span></div>
         </div>
       </div>
       <div class="reveal flex justify-center md:justify-end">
@@ -72,232 +66,188 @@
           <img src="./photo.jpg" alt="Никита Лукашев" width="288" height="384" fetchpriority="high" decoding="async"
                class="relative w-64 h-80 sm:w-72 sm:h-96 object-cover rounded-3xl border-2 border-white/10 shadow-2xl"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl border-2 border-white/10 bg-panel items-center justify-center text-gray-600 text-sm text-center px-6" style="display:none">
-            Сохраните фото как<br><code class="text-accent">photo.jpg</code><br>рядом с index.html
-          </div>
+          <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl border-2 border-white/10 bg-panel items-center justify-center text-gray-600 text-sm text-center px-6" style="display:none">photo.jpg</div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- about -->
   <section id="about" class="py-24 px-6">
     <div class="max-w-5xl mx-auto reveal">
-      <h2 class="text-sm font-mono text-accent mb-3">// обо мне</h2>
-      <p class="text-2xl sm:text-3xl font-light leading-relaxed text-gray-200">
-        Fullstack-инженер с фокусом на <span class="text-white font-medium">результат продукта</span>.
-        Последние 6 лет — в швейцарской продуктовой компании <span class="text-white font-medium">HS Soft AG</span>
-        (ERP для ритейла): проектировал архитектуру, строил интеграции и вёл команду.
-        Люблю задачи на стыке <span class="text-white font-medium">frontend, backend и AI</span> —
-        и довожу их от идеи до работающего продукта.
-      </p>
+      <h2 class="text-sm font-mono text-accent mb-3" data-i18n="about.tag">// обо мне</h2>
+      <p class="text-2xl sm:text-3xl font-light leading-relaxed text-gray-200" data-i18n="about.text">Fullstack-инженер с фокусом на <span class="text-white font-medium">результат продукта</span>. Последние 6 лет — в швейцарской продуктовой компании <span class="text-white font-medium">HS Soft AG</span> (ERP для ритейла): проектировал архитектуру, строил интеграции и развивал продукт. Люблю задачи на стыке <span class="text-white font-medium">frontend, backend и AI</span> — и довожу их от идеи до работающего продукта.</p>
     </div>
   </section>
 
-  <!-- skills -->
   <section id="skills" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-sm font-mono text-accent mb-3 reveal">// стек</h2>
-      <h3 class="text-3xl font-bold mb-10 reveal">Технологии</h3>
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="skills.tag">// стек</h2>
+      <h3 class="text-3xl font-bold mb-10 reveal" data-i18n="skills.title">Технологии</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="reveal glass rounded-2xl p-6 card-hover">
           <div class="text-accent2 font-mono text-sm mb-3">Frontend</div>
           <div class="flex flex-wrap gap-2 text-sm">
-            <span class="skill glass rounded-lg px-2.5 py-1">Angular</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">React</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Next.js</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">TypeScript</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">RxJS</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Redux</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Tailwind</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Angular</span><span class="skill glass rounded-lg px-2.5 py-1">React</span><span class="skill glass rounded-lg px-2.5 py-1">Next.js</span><span class="skill glass rounded-lg px-2.5 py-1">TypeScript</span><span class="skill glass rounded-lg px-2.5 py-1">RxJS</span><span class="skill glass rounded-lg px-2.5 py-1">Redux</span><span class="skill glass rounded-lg px-2.5 py-1">Tailwind</span>
           </div>
         </div>
         <div class="reveal glass rounded-2xl p-6 card-hover">
           <div class="text-accent2 font-mono text-sm mb-3">Backend</div>
           <div class="flex flex-wrap gap-2 text-sm">
-            <span class="skill glass rounded-lg px-2.5 py-1">Node.js</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">NestJS</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Python</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Django</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">FastAPI</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">REST</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">GraphQL</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Node.js</span><span class="skill glass rounded-lg px-2.5 py-1">NestJS</span><span class="skill glass rounded-lg px-2.5 py-1">Python</span><span class="skill glass rounded-lg px-2.5 py-1">Django</span><span class="skill glass rounded-lg px-2.5 py-1">FastAPI</span><span class="skill glass rounded-lg px-2.5 py-1">REST</span><span class="skill glass rounded-lg px-2.5 py-1">GraphQL</span>
           </div>
         </div>
         <div class="reveal glass rounded-2xl p-6 card-hover">
-          <div class="text-accent2 font-mono text-sm mb-3">Данные · Инфра</div>
+          <div class="text-accent2 font-mono text-sm mb-3" data-i18n="skills.data">Данные · Инфра</div>
           <div class="flex flex-wrap gap-2 text-sm">
-            <span class="skill glass rounded-lg px-2.5 py-1">PostgreSQL</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">MongoDB</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Redis</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Docker</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Kubernetes</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">AWS</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">CI/CD</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">PostgreSQL</span><span class="skill glass rounded-lg px-2.5 py-1">MongoDB</span><span class="skill glass rounded-lg px-2.5 py-1">Redis</span><span class="skill glass rounded-lg px-2.5 py-1">Docker</span><span class="skill glass rounded-lg px-2.5 py-1">Kubernetes</span><span class="skill glass rounded-lg px-2.5 py-1">AWS</span><span class="skill glass rounded-lg px-2.5 py-1">CI/CD</span>
           </div>
         </div>
         <div class="reveal glass rounded-2xl p-6 card-hover">
-          <div class="text-accent2 font-mono text-sm mb-3">AI · Платежи</div>
+          <div class="text-accent2 font-mono text-sm mb-3" data-i18n="skills.ai">AI · Платежи</div>
           <div class="flex flex-wrap gap-2 text-sm">
-            <span class="skill glass rounded-lg px-2.5 py-1">Claude / LLM API</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">RAG</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Claude Code</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Stripe</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Adyen</span>
-            <span class="skill glass rounded-lg px-2.5 py-1">Datatrans</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Claude / LLM API</span><span class="skill glass rounded-lg px-2.5 py-1">RAG</span><span class="skill glass rounded-lg px-2.5 py-1">Claude Code</span><span class="skill glass rounded-lg px-2.5 py-1">Stripe</span><span class="skill glass rounded-lg px-2.5 py-1">Adyen</span><span class="skill glass rounded-lg px-2.5 py-1">Datatrans</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- experience -->
   <section id="experience" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-sm font-mono text-accent mb-3 reveal">// карьера</h2>
-      <h3 class="text-3xl font-bold mb-12 reveal">Опыт работы</h3>
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="exp.tag">// карьера</h2>
+      <h3 class="text-3xl font-bold mb-12 reveal" data-i18n="exp.title">Опыт работы</h3>
       <div class="space-y-6">
         <div class="reveal glass rounded-2xl p-7 card-hover">
           <div class="flex flex-wrap justify-between gap-2 mb-2">
-            <h4 class="text-xl font-semibold">Senior Fullstack Developer · Team Lead</h4>
+            <h4 class="text-xl font-semibold" data-i18n="exp.role1">Senior Fullstack Developer</h4>
             <span class="font-mono text-sm text-cyan-300">2020 — 2026</span>
           </div>
-          <div class="text-accent font-medium mb-3">HS Soft AG · Швейцария</div>
-          <p class="text-gray-400 leading-relaxed">
-            ERP-платформа для ритейла и хлебопечения. Руководил командой из 5 человек
-            (~40% менеджмент / 60% разработка): проектировал архитектуру, строил интеграции
-            облачных сервисов и платёжных систем с ERP, автоматизировал обмен данными,
-            внедрял AI-инструменты в процесс команды. Стек: Angular, React, Node.js/NestJS,
-            Python, PostgreSQL, AWS, Serverless.
-          </p>
+          <div class="text-accent font-medium mb-3" data-i18n="exp.company1">HS Soft AG · Швейцария</div>
+          <p class="text-gray-400 leading-relaxed" data-i18n="exp.desc1">ERP-платформа для ритейла и хлебопечения. Проектировал архитектуру, строил интеграции облачных сервисов и платёжных систем с ERP, автоматизировал обмен данными, внедрял AI-инструменты в процесс разработки. Стек: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.</p>
         </div>
         <div class="reveal glass rounded-2xl p-7 card-hover">
           <div class="flex flex-wrap justify-between gap-2 mb-2">
-            <h4 class="text-xl font-semibold">Node.js / React Developer</h4>
+            <h4 class="text-xl font-semibold" data-i18n="exp.role2">Node.js / React Developer</h4>
             <span class="font-mono text-sm text-cyan-300">2018 — 2019</span>
           </div>
-          <div class="text-accent font-medium mb-3">Remote Assembly · Эстония</div>
-          <p class="text-gray-400 leading-relaxed">
-            Разработка SPA на React и серверных функций (Google Cloud Functions) на Node.js.
-            Работа по Scrum.
-          </p>
+          <div class="text-accent font-medium mb-3" data-i18n="exp.company2">Remote Assembly · Эстония</div>
+          <p class="text-gray-400 leading-relaxed" data-i18n="exp.desc2">Разработка SPA на React и серверных функций (Google Cloud Functions) на Node.js. Работа по Scrum.</p>
         </div>
         <div class="reveal glass rounded-2xl p-7 card-hover">
           <div class="flex flex-wrap justify-between gap-2 mb-2">
-            <h4 class="text-xl font-semibold">Fullstack Developer</h4>
+            <h4 class="text-xl font-semibold" data-i18n="exp.role3">Fullstack Developer</h4>
             <span class="font-mono text-sm text-cyan-300">2018 — 2020</span>
           </div>
-          <div class="text-accent font-medium mb-3">Фриланс</div>
-          <p class="text-gray-400 leading-relaxed">
-            Разработка SPA (React/Angular), backend на Node.js, интеграции внешних сервисов
-            и платёжных шлюзов (Stripe), контейнеризация и деплой.
-          </p>
+          <div class="text-accent font-medium mb-3" data-i18n="exp.company3">Фриланс</div>
+          <p class="text-gray-400 leading-relaxed" data-i18n="exp.desc3">Разработка SPA (React/Angular), backend на Node.js, интеграции внешних сервисов и платёжных шлюзов (Stripe), контейнеризация и деплой.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- projects -->
   <section id="projects" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-sm font-mono text-accent mb-3 reveal">// работы</h2>
-      <h3 class="text-3xl font-bold mb-12 reveal">Проекты</h3>
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="proj.tag">// работы</h2>
+      <h3 class="text-3xl font-bold mb-12 reveal" data-i18n="proj.title">Проекты</h3>
       <div class="grid md:grid-cols-2 gap-6">
         <a href="https://github.com/Lukashev97/DocuMind" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-3xl">🧠</span>
-            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl">🧠</span><span class="text-gray-500 group-hover:text-accent transition">↗</span></div>
           <h4 class="text-xl font-semibold mb-2">DocuMind</h4>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            AI/RAG-сервис ответов по документам: LLM (Claude), векторный поиск (pgvector),
-            агентная логика с цитированием источников. Собран с нуля.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
-            <span>FastAPI</span><span>·</span><span>Claude API</span><span>·</span><span>pgvector</span><span>·</span><span>Next.js</span><span>·</span><span>Docker</span>
-          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="proj.docu">AI/RAG-сервис ответов по документам: LLM (Claude), векторный поиск (pgvector), агентная логика с цитированием источников. Собран с нуля.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300"><span>FastAPI</span><span>·</span><span>Claude API</span><span>·</span><span>pgvector</span><span>·</span><span>Next.js</span><span>·</span><span>Docker</span></div>
         </a>
         <a href="https://lukashev97-ttrcustoms-frontend-20ec.twc1.net/charts" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-3xl">🎵</span>
-            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl">🎵</span><span class="text-gray-500 group-hover:text-accent transition">↗</span></div>
           <h4 class="text-xl font-semibold mb-2">TTR Customs</h4>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            Сайт с треками для ритм-игры Tap Tap Player. Фронтенд на Angular, backend на Django.
-            Собран и задеплоен с нуля.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
-            <span>Angular</span><span>·</span><span>Django</span><span>·</span><span>PostgreSQL</span>
-          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="proj.ttr">Сайт с треками для ритм-игры Tap Tap Player. Фронтенд на Angular, backend на Django. Собран и задеплоен с нуля.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300"><span>Angular</span><span>·</span><span>Django</span><span>·</span><span>PostgreSQL</span></div>
         </a>
         <a href="https://github.com/Lukashev/stripe-yt-tutorial" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-3xl">💳</span>
-            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
-          </div>
-          <h4 class="text-xl font-semibold mb-2">Payment Integrations</h4>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            Интеграция платёжных систем (Stripe, Adyen, Datatrans): приём платежей,
-            вебхуки, сверка транзакций.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
-            <span>Stripe</span><span>·</span><span>Node.js</span><span>·</span><span>React</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl">💳</span><span class="text-gray-500 group-hover:text-accent transition">↗</span></div>
+          <h4 class="text-xl font-semibold mb-2" data-i18n="proj.payTitle">Payment Integrations</h4>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="proj.pay">Интеграция платёжных систем (Stripe, Adyen, Datatrans): приём платежей, вебхуки, сверка транзакций.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300"><span>Stripe</span><span>·</span><span>Node.js</span><span>·</span><span>React</span></div>
         </a>
         <div class="reveal glass rounded-2xl p-7 card-hover flex flex-col justify-center items-center text-center">
           <span class="text-3xl mb-3">🚀</span>
-          <h4 class="text-xl font-semibold mb-2">Больше на GitHub</h4>
-          <p class="text-gray-400 text-sm mb-4">Пет-проекты, эксперименты и open-source.</p>
+          <h4 class="text-xl font-semibold mb-2" data-i18n="proj.moreTitle">Больше на GitHub</h4>
+          <p class="text-gray-400 text-sm mb-4" data-i18n="proj.moreDesc">Пет-проекты, эксперименты и open-source.</p>
           <a href="https://github.com/Lukashev97" target="_blank" class="text-accent hover:text-violet-400 transition font-medium text-sm">github.com/Lukashev97 →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- education -->
-  <section id="education" class="py-24 px-6">
+  <section id="services" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-sm font-mono text-accent mb-3 reveal">// образование и преподавание</h2>
-      <h3 class="text-3xl font-bold mb-12 reveal">Образование</h3>
-      <div class="grid md:grid-cols-3 gap-6">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="svc.tag">// услуги</h2>
+      <h3 class="text-3xl font-bold mb-3 reveal" data-i18n="svc.title">Услуги для фриланса</h3>
+      <p class="text-gray-400 mb-12 reveal max-w-2xl" data-i18n="svc.sub">Беру проектную работу как ИП — от MVP до доработки продукта. Оплата почасово или фикс за проект.</p>
+      <div class="grid sm:grid-cols-2 gap-6">
         <div class="reveal glass rounded-2xl p-7 card-hover">
-          <span class="text-3xl">🎓</span>
-          <h4 class="text-lg font-semibold mt-3 mb-1">Высшее образование</h4>
-          <div class="text-accent text-sm font-medium mb-2">Факультет кибернетики и системной инженерии</div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            <span class="text-gray-300 font-medium">Магистр</span> — ПО систем · 2019–2020<br>
-            <span class="text-gray-300 font-medium">Бакалавр</span> — программная инженерия · 2015–2019
-          </p>
+          <span class="text-3xl">🚀</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="svc.c1t">Fullstack под ключ</h4>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="svc.c1d">MVP и продукты с нуля: фронтенд, backend, база данных и деплой. Довожу от идеи до работающего приложения.</p>
         </div>
         <div class="reveal glass rounded-2xl p-7 card-hover">
-          <span class="text-3xl">🧑‍🏫</span>
-          <h4 class="text-lg font-semibold mt-3 mb-1">Преподаватель</h4>
-          <div class="text-accent text-sm font-medium mb-2">Академия ШАГ · 2020–2022</div>
-          <p class="text-gray-400 text-sm leading-relaxed">Преподавал веб-разработку, менторил и готовил студентов к реальным проектам.</p>
+          <span class="text-3xl">⚡</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="svc.c2t">SSR / Next.js</h4>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="svc.c2d">Миграция SPA на SSR, оптимизация производительности и Core Web Vitals, SEO для React/Next.js-приложений.</p>
         </div>
         <div class="reveal glass rounded-2xl p-7 card-hover">
-          <span class="text-3xl">📜</span>
-          <h4 class="text-lg font-semibold mt-3 mb-1">Сертификат</h4>
-          <div class="text-accent text-sm font-medium mb-2">Wezom Academy</div>
-          <p class="text-gray-400 text-sm leading-relaxed">Курс HTML / CSS / JavaScript — сертификат об успешном прохождении.</p>
+          <span class="text-3xl">🔌</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="svc.c3t">Интеграции</h4>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="svc.c3d">Внешние API, платёжные системы (Stripe, Adyen, Datatrans), обмен данными между сервисами, вебхуки, надёжная обработка ошибок.</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <span class="text-3xl">🤖</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="svc.c4t">AI-решения</h4>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="svc.c4d">LLM-агенты, RAG-сервисы, чат-боты и автоматизация бизнес-процессов на базе Claude / OpenAI.</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover sm:col-span-2">
+          <span class="text-3xl">🕷️</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="svc.c5t">Веб-скрапинг</h4>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="svc.c5d">Сбор и парсинг данных с сайтов, автоматизация браузера (Playwright/Puppeteer), обработка Excel/CSV/JSON, нормализация и выгрузка в базы.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- contact -->
+  <section id="education" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal" data-i18n="edu.tag">// образование и преподавание</h2>
+      <h3 class="text-3xl font-bold mb-12 reveal" data-i18n="edu.title">Образование</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <span class="text-3xl">🎓</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="edu.c1t">Высшее образование</h4>
+          <div class="text-accent text-sm font-medium mb-2" data-i18n="edu.c1s">Факультет кибернетики и системной инженерии</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="edu.c1d"><span class="text-gray-300 font-medium">Магистр</span> — ПО систем · 2019–2020<br><span class="text-gray-300 font-medium">Бакалавр</span> — программная инженерия · 2015–2019</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <span class="text-3xl">🧑‍🏫</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="edu.c2t">Преподаватель</h4>
+          <div class="text-accent text-sm font-medium mb-2" data-i18n="edu.c2s">Академия ШАГ · 2020–2022</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="edu.c2d">Преподавал веб-разработку, менторил и готовил студентов к реальным проектам.</p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <span class="text-3xl">📜</span>
+          <h4 class="text-lg font-semibold mt-3 mb-1" data-i18n="edu.c3t">Сертификат</h4>
+          <div class="text-accent text-sm font-medium mb-2">Wezom Academy</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="edu.c3d">Курс HTML / CSS / JavaScript — сертификат об успешном прохождении.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="py-24 px-6">
     <div class="max-w-3xl mx-auto text-center reveal">
-      <h2 class="text-sm font-mono text-accent mb-3">// контакты</h2>
-      <h3 class="text-3xl sm:text-4xl font-bold mb-4">Давайте поработаем вместе</h3>
-      <p class="text-gray-400 mb-10 max-w-xl mx-auto">
-        Открыт к предложениям (Senior Fullstack / Frontend / Backend / Team Lead).
-        Удалённо, оформление через ИП. Отвечаю быстро.
-      </p>
+      <h2 class="text-sm font-mono text-accent mb-3" data-i18n="contact.tag">// контакты</h2>
+      <h3 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="contact.title">Давайте поработаем вместе</h3>
+      <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="contact.desc">Открыт к предложениям (Senior Fullstack / Frontend / Backend). Удалённо, оформление через ИП. Отвечаю быстро.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="https://t.me/lnmasterJS" target="_blank" class="px-6 py-3 rounded-full bg-accent hover:bg-violet-500 transition font-medium text-white">Telegram</a>
-        <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">⬇ Резюме (PDF)</a>
+        <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium" data-i18n="contact.resume">⬇ Резюме (PDF)</a>
         <a href="https://github.com/Lukashev97" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">GitHub</a>
         <a href="https://career.habr.com/lukashev161" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">Хабр Карьера</a>
         <a href="https://smolensk.hh.ru/resume/28d29fd4ff10b3e3d30039ed1f6a7263596677" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">hh.ru</a>
@@ -306,9 +256,7 @@
     </div>
   </section>
 
-  <footer class="py-10 px-6 text-center text-sm text-gray-600 border-t border-white/5">
-    © 2026 Никита Лукашев · Senior Fullstack Developer · Смоленск, Россия
-  </footer>
+  <footer class="py-10 px-6 text-center text-sm text-gray-600 border-t border-white/5" data-i18n="footer">© 2026 Никита Лукашев · Senior Fullstack Developer · Смоленск, Россия</footer>
 
   <script>
     const io = new IntersectionObserver((entries) => {
@@ -316,16 +264,67 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // theme toggle
-    const root = document.documentElement;
-    const btn = document.getElementById('theme-toggle');
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light') { root.classList.add('light'); btn.textContent = '☀️'; }
-    btn.addEventListener('click', () => {
+    // theme
+    const root = document.documentElement, tbtn = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'light') { root.classList.add('light'); tbtn.textContent = '☀️'; }
+    tbtn.addEventListener('click', () => {
       const light = root.classList.toggle('light');
-      btn.textContent = light ? '☀️' : '🌙';
+      tbtn.textContent = light ? '☀️' : '🌙';
       localStorage.setItem('theme', light ? 'light' : 'dark');
     });
+
+    // i18n
+    const I18N = {
+      en: {
+        'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.services':'Services','nav.education':'Education','nav.contact':'Contact','nav.cta':'Get in touch',
+        'svc.tag':'// services','svc.title':'Freelance services','svc.sub':'Available for project work as a contractor (B2B) — from MVP to product improvements. Hourly or fixed price per project.',
+        'svc.c1t':'Turnkey Fullstack','svc.c1d':'MVPs and products from scratch: frontend, backend, database and deployment. From idea to a working app.',
+        'svc.c2t':'SSR / Next.js','svc.c2d':'SPA-to-SSR migration, performance and Core Web Vitals optimization, SEO for React/Next.js apps.',
+        'svc.c3t':'Integrations','svc.c3d':'External APIs, payment systems (Stripe, Adyen, Datatrans), data exchange between services, webhooks, robust error handling.',
+        'svc.c4t':'AI solutions','svc.c4d':'LLM agents, RAG services, chatbots and business-process automation powered by Claude / OpenAI.',
+        'svc.c5t':'Web scraping','svc.c5d':'Data collection and parsing from websites, browser automation (Playwright/Puppeteer), Excel/CSV/JSON processing, normalization and loading into databases.',
+        'hero.badge':'Open to offers · Remote / B2B','hero.name':'Nikita<br><span class="gradtext">Lukashev</span>','hero.title':'Senior Fullstack Developer',
+        'hero.desc':'8+ years building web products from idea to production: complex interfaces, reliable backend, integrations and AI solutions.',
+        'hero.btnProjects':'View projects','hero.btnResume':'⬇ Download CV','hero.stat1':'years of experience','hero.stat2':'frontend + backend + AI','hero.stat3':'English',
+        'about.tag':'// about','about.text':'Fullstack engineer focused on <span class="text-white font-medium">product outcomes</span>. Last 6 years at Swiss product company <span class="text-white font-medium">HS Soft AG</span> (retail ERP): designed architecture, built integrations and shipped features. I love work at the intersection of <span class="text-white font-medium">frontend, backend and AI</span> — and take it from idea to a working product.',
+        'skills.tag':'// stack','skills.title':'Technologies','skills.data':'Data · Infra','skills.ai':'AI · Payments',
+        'exp.tag':'// career','exp.title':'Experience',
+        'exp.role1':'Senior Fullstack Developer','exp.company1':'HS Soft AG · Switzerland','exp.desc1':'ERP platform for retail and bakeries. Designed architecture, built cloud and payment integrations with the ERP, automated data exchange, introduced AI tooling into the development process. Stack: Angular, React, Node.js/NestJS, Python, PostgreSQL, AWS, Serverless.',
+        'exp.role2':'Node.js / React Developer','exp.company2':'Remote Assembly · Estonia','exp.desc2':'Built SPAs in React and serverless functions (Google Cloud Functions) in Node.js. Scrum workflow.',
+        'exp.role3':'Fullstack Developer','exp.company3':'Freelance','exp.desc3':'SPAs (React/Angular), Node.js backend, integrations with external services and payment gateways (Stripe), containerization and deployment.',
+        'proj.tag':'// work','proj.title':'Projects',
+        'proj.docu':'AI/RAG service answering questions over documents: LLM (Claude), vector search (pgvector), agentic logic with source citations. Built from scratch.',
+        'proj.ttr':'A site with track charts for the rhythm game Tap Tap Player. Angular frontend, Django backend. Built and deployed from scratch.',
+        'proj.payTitle':'Payment Integrations','proj.pay':'Integration of payment systems (Stripe, Adyen, Datatrans): payment processing, webhooks, transaction reconciliation.',
+        'proj.moreTitle':'More on GitHub','proj.moreDesc':'Pet projects, experiments and open-source.',
+        'edu.tag':'// education & teaching','edu.title':'Education',
+        'edu.c1t':'Higher education','edu.c1s':'Faculty of Cybernetics & Systems Engineering','edu.c1d':'<span class="text-gray-300 font-medium">Master</span> — Systems Software · 2019–2020<br><span class="text-gray-300 font-medium">Bachelor</span> — Software Engineering · 2015–2019',
+        'edu.c2t':'Instructor','edu.c2s':'STEP IT Academy · 2020–2022','edu.c2d':'Taught web development, mentored and prepared students for real-world projects.',
+        'edu.c3t':'Certificate','edu.c3d':'HTML / CSS / JavaScript course — certificate of completion.',
+        'contact.tag':'// contact','contact.title':"Let's work together",'contact.desc':'Open to offers (Senior Fullstack / Frontend / Backend). Remote, B2B. I reply fast.','contact.resume':'⬇ CV (PDF)',
+        'footer':'© 2026 Nikita Lukashev · Senior Fullstack Developer · Smolensk, Russia'
+      }
+    };
+    // capture RU defaults from DOM
+    const RU = {};
+    document.querySelectorAll('[data-i18n]').forEach(el => RU[el.dataset.i18n] = el.innerHTML);
+    I18N.ru = RU;
+
+    const META = {
+      ru: { title:'Никита Лукашев — Senior Fullstack Developer', desc:'Senior Fullstack Developer. 8+ лет опыта. Angular, React, Node.js, Python, AI. Портфолио.' },
+      en: { title:'Nikita Lukashev — Senior Fullstack Developer', desc:'Senior Fullstack Developer. 8+ years. Angular, React, Node.js, Python, AI. Portfolio.' }
+    };
+    const lbtn = document.getElementById('lang-toggle');
+    function setLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => { const v = I18N[lang][el.dataset.i18n]; if (v !== undefined) el.innerHTML = v; });
+      root.lang = lang;
+      document.title = META[lang].title;
+      document.querySelector('meta[name=description]').setAttribute('content', META[lang].desc);
+      lbtn.textContent = lang === 'ru' ? 'EN' : 'РУ';
+      localStorage.setItem('lang', lang);
+    }
+    setLang(localStorage.getItem('lang') || 'ru');
+    lbtn.addEventListener('click', () => setLang(root.lang === 'ru' ? 'en' : 'ru'));
   </script>
 </body>
 </html>
