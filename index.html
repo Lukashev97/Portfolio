@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Никита Лукашев — Senior Fullstack Developer</title>
+  <meta name="description" content="Senior Fullstack Developer / Team Lead. 8+ лет опыта. Angular, React, Node.js, Python, AI. Портфолио." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+          colors: {
+            ink: '#0a0a0f', panel: '#12121a', accent: '#8b5cf6', accent2: '#22d3ee',
+          },
+          animation: {
+            'blob': 'blob 18s infinite ease-in-out',
+            'float': 'float 6s infinite ease-in-out',
+          },
+          keyframes: {
+            blob: { '0%,100%':{transform:'translate(0,0) scale(1)'}, '33%':{transform:'translate(40px,-50px) scale(1.1)'}, '66%':{transform:'translate(-30px,30px) scale(0.95)'} },
+            float: { '0%,100%':{transform:'translateY(0)'}, '50%':{transform:'translateY(-12px)'} },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background:#0a0a0f; color:#e5e7eb; }
+    ::selection { background:#8b5cf6; color:#fff; }
+    .reveal { opacity:0; transform:translateY(30px); transition:all .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.show { opacity:1; transform:none; }
+    .glass { background:rgba(255,255,255,.04); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.08); }
+    .gradtext { background:linear-gradient(120deg,#a78bfa,#22d3ee,#a78bfa); background-size:200%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shimmer 6s linear infinite; }
+    @keyframes shimmer { to { background-position:200% center; } }
+    .card-hover { transition:all .4s cubic-bezier(.16,1,.3,1); }
+    .card-hover:hover { transform:translateY(-6px); border-color:rgba(139,92,246,.5); box-shadow:0 20px 60px -20px rgba(139,92,246,.4); }
+    .skill:hover { transform:translateY(-3px) scale(1.05); border-color:rgba(34,211,238,.6); color:#fff; }
+    .skill { transition:all .25s; }
+    ::-webkit-scrollbar{width:10px} ::-webkit-scrollbar-track{background:#0a0a0f} ::-webkit-scrollbar-thumb{background:#2a2a3a;border-radius:5px}
+
+    /* ---- light theme ---- */
+    html.light body { background:#f6f7fb; color:#1f2937; }
+    html.light .glass { background:rgba(255,255,255,.7); border:1px solid rgba(0,0,0,.08); }
+    html.light .text-gray-400 { color:#4b5563 !important; }
+    html.light .text-gray-300 { color:#374151 !important; }
+    html.light .text-gray-200 { color:#1f2937 !important; }
+    html.light .text-gray-500, html.light .text-gray-600 { color:#6b7280 !important; }
+    html.light .text-white { color:#0f172a !important; }
+    html.light .border-white\/5 { border-color:rgba(0,0,0,.08) !important; }
+    html.light ::-webkit-scrollbar-track{background:#f6f7fb} html.light ::-webkit-scrollbar-thumb{background:#cbd5e1}
+    html.light .bg-violet-600\/20 { opacity:.5 } html.light .bg-cyan-500\/15 { opacity:.5 } html.light .bg-fuchsia-600\/10 { opacity:.5 }
+  </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+  <!-- animated background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[45vw] h-[45vw] bg-violet-600/20 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-cyan-500/15 rounded-full blur-3xl animate-blob" style="animation-delay:-6s"></div>
+    <div class="absolute top-[40%] left-[50%] w-[30vw] h-[30vw] bg-fuchsia-600/10 rounded-full blur-3xl animate-blob" style="animation-delay:-12s"></div>
+  </div>
+
+  <!-- nav -->
+  <nav class="fixed top-0 inset-x-0 z-50 glass">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="font-bold text-lg tracking-tight">НЛ<span class="text-accent">.</span></a>
+      <div class="hidden sm:flex gap-8 text-sm text-gray-400">
+        <a href="#about" class="hover:text-white transition">Обо мне</a>
+        <a href="#skills" class="hover:text-white transition">Навыки</a>
+        <a href="#experience" class="hover:text-white transition">Опыт</a>
+        <a href="#projects" class="hover:text-white transition">Проекты</a>
+        <a href="#contact" class="hover:text-white transition">Контакты</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" aria-label="Сменить тему" class="w-9 h-9 rounded-full glass hover:border-white/30 transition flex items-center justify-center text-lg">🌙</button>
+        <a href="#contact" class="text-sm font-medium px-4 py-2 rounded-full bg-accent hover:bg-violet-500 transition text-white">Связаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <header id="top" class="min-h-screen flex items-center pt-24 pb-16 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-12 items-center w-full">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 text-xs font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-3 py-1 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Открыт к предложениям · Удалённо / ИП
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight mb-4">
+          Никита<br><span class="gradtext">Лукашев</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-300 font-medium mb-2">Senior Fullstack Developer · Team Lead</p>
+        <p class="text-gray-400 max-w-xl mb-8 leading-relaxed">
+          8+ лет создаю веб-продукты от идеи до продакшена: сложные интерфейсы, надёжный backend,
+          интеграции и AI-решения. Руководил командой из 5 человек.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#projects" class="px-6 py-3 rounded-full bg-accent hover:bg-violet-500 transition font-medium text-white">Смотреть проекты</a>
+          <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium inline-flex items-center gap-2">⬇ Скачать резюме</a>
+          <a href="https://github.com/Lukashev97" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">GitHub</a>
+        </div>
+        <div class="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-sm text-gray-400">
+          <div><span class="text-2xl font-bold text-white">8+</span> лет опыта</div>
+          <div><span class="text-2xl font-bold text-white">5</span> человек в команде</div>
+          <div><span class="text-2xl font-bold text-white">C1</span> английский</div>
+        </div>
+      </div>
+      <div class="reveal flex justify-center md:justify-end">
+        <div class="relative animate-float">
+          <div class="absolute -inset-4 bg-gradient-to-tr from-accent to-accent2 rounded-3xl blur-2xl opacity-40"></div>
+          <img src="./photo.jpg" alt="Никита Лукашев"
+               class="relative w-64 h-80 sm:w-72 sm:h-96 object-cover rounded-3xl border-2 border-white/10 shadow-2xl"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl border-2 border-white/10 bg-panel items-center justify-center text-gray-600 text-sm text-center px-6" style="display:none">
+            Сохраните фото как<br><code class="text-accent">photo.jpg</code><br>рядом с index.html
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- about -->
+  <section id="about" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <h2 class="text-sm font-mono text-accent mb-3">// обо мне</h2>
+      <p class="text-2xl sm:text-3xl font-light leading-relaxed text-gray-200">
+        Fullstack-инженер с фокусом на <span class="text-white font-medium">результат продукта</span>.
+        Последние 6 лет — в швейцарской продуктовой компании <span class="text-white font-medium">HS Soft AG</span>
+        (ERP для ритейла): проектировал архитектуру, строил интеграции и вёл команду.
+        Люблю задачи на стыке <span class="text-white font-medium">frontend, backend и AI</span> —
+        и довожу их от идеи до работающего продукта.
+      </p>
+    </div>
+  </section>
+
+  <!-- skills -->
+  <section id="skills" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal">// стек</h2>
+      <h3 class="text-3xl font-bold mb-10 reveal">Технологии</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal glass rounded-2xl p-6 card-hover">
+          <div class="text-accent2 font-mono text-sm mb-3">Frontend</div>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="skill glass rounded-lg px-2.5 py-1">Angular</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">React</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Next.js</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">TypeScript</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">RxJS</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Redux</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Tailwind</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-2xl p-6 card-hover">
+          <div class="text-accent2 font-mono text-sm mb-3">Backend</div>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="skill glass rounded-lg px-2.5 py-1">Node.js</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">NestJS</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Python</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Django</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">FastAPI</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">REST</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">GraphQL</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-2xl p-6 card-hover">
+          <div class="text-accent2 font-mono text-sm mb-3">Данные · Инфра</div>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="skill glass rounded-lg px-2.5 py-1">PostgreSQL</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">MongoDB</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Redis</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Docker</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Kubernetes</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">AWS</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">CI/CD</span>
+          </div>
+        </div>
+        <div class="reveal glass rounded-2xl p-6 card-hover">
+          <div class="text-accent2 font-mono text-sm mb-3">AI · Платежи</div>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="skill glass rounded-lg px-2.5 py-1">Claude / LLM API</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">RAG</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Claude Code</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Stripe</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Adyen</span>
+            <span class="skill glass rounded-lg px-2.5 py-1">Datatrans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- experience -->
+  <section id="experience" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal">// карьера</h2>
+      <h3 class="text-3xl font-bold mb-12 reveal">Опыт работы</h3>
+      <div class="space-y-6">
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <div class="flex flex-wrap justify-between gap-2 mb-2">
+            <h4 class="text-xl font-semibold">Senior Fullstack Developer · Team Lead</h4>
+            <span class="font-mono text-sm text-cyan-300">2020 — 2026</span>
+          </div>
+          <div class="text-accent font-medium mb-3">HS Soft AG · Швейцария</div>
+          <p class="text-gray-400 leading-relaxed">
+            ERP-платформа для ритейла и хлебопечения. Руководил командой из 5 человек
+            (~40% менеджмент / 60% разработка): проектировал архитектуру, строил интеграции
+            облачных сервисов и платёжных систем с ERP, автоматизировал обмен данными,
+            внедрял AI-инструменты в процесс команды. Стек: Angular, React, Node.js/NestJS,
+            Python, PostgreSQL, AWS, Serverless.
+          </p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <div class="flex flex-wrap justify-between gap-2 mb-2">
+            <h4 class="text-xl font-semibold">Node.js / React Developer</h4>
+            <span class="font-mono text-sm text-cyan-300">2018 — 2019</span>
+          </div>
+          <div class="text-accent font-medium mb-3">Remote Assembly · Эстония</div>
+          <p class="text-gray-400 leading-relaxed">
+            Разработка SPA на React и серверных функций (Google Cloud Functions) на Node.js.
+            Работа по Scrum.
+          </p>
+        </div>
+        <div class="reveal glass rounded-2xl p-7 card-hover">
+          <div class="flex flex-wrap justify-between gap-2 mb-2">
+            <h4 class="text-xl font-semibold">Fullstack Developer</h4>
+            <span class="font-mono text-sm text-cyan-300">2018 — 2020</span>
+          </div>
+          <div class="text-accent font-medium mb-3">Фриланс</div>
+          <p class="text-gray-400 leading-relaxed">
+            Разработка SPA (React/Angular), backend на Node.js, интеграции внешних сервисов
+            и платёжных шлюзов (Stripe), контейнеризация и деплой.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <section id="projects" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-mono text-accent mb-3 reveal">// работы</h2>
+      <h3 class="text-3xl font-bold mb-12 reveal">Проекты</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="https://github.com/Lukashev97/DocuMind" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">🧠</span>
+            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">DocuMind</h4>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            AI/RAG-сервис ответов по документам: LLM (Claude), векторный поиск (pgvector),
+            агентная логика с цитированием источников. Собран с нуля.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
+            <span>FastAPI</span><span>·</span><span>Claude API</span><span>·</span><span>pgvector</span><span>·</span><span>Next.js</span><span>·</span><span>Docker</span>
+          </div>
+        </a>
+        <a href="https://lukashev97-ttrcustoms-frontend-20ec.twc1.net/charts" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">🎵</span>
+            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">TTR Customs</h4>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            Сайт с треками для ритм-игры Tap Tap Player. Фронтенд на Angular, backend на Django.
+            Собран и задеплоен с нуля.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
+            <span>Angular</span><span>·</span><span>Django</span><span>·</span><span>PostgreSQL</span>
+          </div>
+        </a>
+        <a href="https://github.com/Lukashev/stripe-yt-tutorial" target="_blank" class="reveal glass rounded-2xl p-7 card-hover block group">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">💳</span>
+            <span class="text-gray-500 group-hover:text-accent transition">↗</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Payment Integrations</h4>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            Интеграция платёжных систем (Stripe, Adyen, Datatrans): приём платежей,
+            вебхуки, сверка транзакций.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
+            <span>Stripe</span><span>·</span><span>Node.js</span><span>·</span><span>React</span>
+          </div>
+        </a>
+        <div class="reveal glass rounded-2xl p-7 card-hover flex flex-col justify-center items-center text-center">
+          <span class="text-3xl mb-3">🚀</span>
+          <h4 class="text-xl font-semibold mb-2">Больше на GitHub</h4>
+          <p class="text-gray-400 text-sm mb-4">Пет-проекты, эксперименты и open-source.</p>
+          <a href="https://github.com/Lukashev97" target="_blank" class="text-accent hover:text-violet-400 transition font-medium text-sm">github.com/Lukashev97 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <h2 class="text-sm font-mono text-accent mb-3">// контакты</h2>
+      <h3 class="text-3xl sm:text-4xl font-bold mb-4">Давайте поработаем вместе</h3>
+      <p class="text-gray-400 mb-10 max-w-xl mx-auto">
+        Открыт к предложениям (Senior Fullstack / Frontend / Backend / Team Lead).
+        Удалённо, оформление через ИП. Отвечаю быстро.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://t.me/lnmasterJS" target="_blank" class="px-6 py-3 rounded-full bg-accent hover:bg-violet-500 transition font-medium text-white">Telegram</a>
+        <a href="./resume.pdf" download class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">⬇ Резюме (PDF)</a>
+        <a href="https://github.com/Lukashev97" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">GitHub</a>
+        <a href="https://career.habr.com/lukashev161" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">Хабр Карьера</a>
+        <a href="https://smolensk.hh.ru/resume/28d29fd4ff10b3e3d30039ed1f6a7263596677" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">hh.ru</a>
+        <a href="https://www.linkedin.com/in/nikita-lukashev-43a38b291/" target="_blank" class="px-6 py-3 rounded-full glass hover:border-white/30 transition font-medium">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 px-6 text-center text-sm text-gray-600 border-t border-white/5">
+    © 2026 Никита Лукашев · Senior Fullstack Developer · Смоленск, Россия
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(()=>e.target.classList.add('show'), (i%4)*80); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // theme toggle
+    const root = document.documentElement;
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') { root.classList.add('light'); btn.textContent = '☀️'; }
+    btn.addEventListener('click', () => {
+      const light = root.classList.toggle('light');
+      btn.textContent = light ? '☀️' : '🌙';
+      localStorage.setItem('theme', light ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
